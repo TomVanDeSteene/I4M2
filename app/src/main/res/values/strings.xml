@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">I4M</string>
+
+    <string name="hint_first_name">Firstname</string>
+    <string name="hint_last_name">Lastname</string>
+    <string name="hint_street">Street</string>
+    <string name="hint_street_number">Number</string>
+    <string name="hint_postal_code">Postal Code</string>
+    <string name="hint_location">Location</string>
+    <string name="hint_telephone">Telephone</string>
+    <string name="hint_email">Email</string>
+
+    <string name="title_activity_add_profile">Add Profile</string>
+    <string name="title_1st_language_dialog">Choose your first language</string>
+
+    <string name="text_btn_add_profile">Add Profile</string>
+    <string name="text_btn_1st_lanuage">1st Lang</string>
+    <string name="text_btn_2nd_lanuage">2nd Lang</string>
+    <string name="text_btn_3rd_lanuage">3rd Lang</string>
+    <string name="text_btn_4th_lanuage">4th Lang</string>
+
+
+    <string name="rb_dutch">Dutch</string>
+    <string name="rb_french">French</string>
+    <string name="rb_english">English</string>
+    <string name="rb_german">German</string>
+    <string name="rb_spanish">Spanish</string>
+    <string name="rb_italian">Italian</string>
+    <string name="rb_portuguese">Portuguese</string>
+    <string name="rb_russian">Russian</string>
+    <string name="rb_arabian">Arabian</string>
+    <string name="rb_turkish">Turkish</string>
+    <string name="rb_other">Other</string>
+    <string name="rb_none">None</string>
+
+
+</resources>

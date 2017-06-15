@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tomvandesteene.i4m.MainActivity">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo"/>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_add_profile"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:text="@string/text_btn_add_profile"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn2"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingTop="5dp"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn3"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn4"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="5dp">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn5"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn6"
+            android:layout_width="170dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/btn_gradient"
+            android:textStyle="bold" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>
