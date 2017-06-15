@@ -9,25 +9,25 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
 /**
- * Created by Tom Van de Steene on 12/06/2017.
+ * Created by Tom Van de Steene on 15/06/2017.
  */
 
-public class Language1Dialog extends DialogFragment{
+public class Language2Dialog extends DialogFragment {
 
     //nodig om resultaat dialog in activity te krijgen
     //interface -> op welke acties reageren? -> eigen listener
-    interface Language1PickerDialogFragmentListener{
-        void language1Picked(String language1);
+    interface Language2PickerDialogFragmentListener{
+        void language2Picked(String language2);
     }
     //verwijzing naar klasse die de listener gebruikt
-    private Language1PickerDialogFragmentListener mLanguage1Listener;
+    private Language2Dialog.Language2PickerDialogFragmentListener mLanguage2Listener;
 
-    final String[] languages1 = {"Dutch", "French", "English", "German", "Spanish", "Russian", "Swedish", "Norwegian", "Finnish" , "Arabian", "Other", "None"};
+    final String[] languages2 = {"Dutch", "French", "English", "German", "Spanish", "Russian", "Swedish", "Norwegian", "Finnish" , "Arabian", "Other", "None"};
 
-    private DialogInterface.OnClickListener language1SelectListener = new DialogInterface.OnClickListener() {
+    private DialogInterface.OnClickListener language2SelectListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            mLanguage1Listener.language1Picked(languages1[which]);
+            mLanguage2Listener.language2Picked(languages2[which]);
         }
     };
     //wanneer fragment in een activity komt, verwijzing maken naar eigen listener
@@ -36,7 +36,7 @@ public class Language1Dialog extends DialogFragment{
         super.onAttach(context);
 
         try {
-            mLanguage1Listener = (Language1PickerDialogFragmentListener) context;
+            mLanguage2Listener = (Language2Dialog.Language2PickerDialogFragmentListener) context;
         }
         catch (ClassCastException cce)
         {
@@ -50,17 +50,17 @@ public class Language1Dialog extends DialogFragment{
 
         //Dialog bevat teveel opties om constructors te voorzien
         //builder klasse vervangt dit, op je builder stel je alles in en dit gebruik je dan om een dialog aan te maken
-        AlertDialog.Builder languageDialog1 = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder languageDialog2 = new AlertDialog.Builder(getActivity());
         //dialoog instellen
         //1 -> title
-        languageDialog1.setTitle("Choose First Language");
+        languageDialog2.setTitle("Choose First Language");
         //2 -> content
-        languageDialog1.setItems(languages1, language1SelectListener);
+        languageDialog2.setItems(languages2, language2SelectListener);
         //3 -> knoppen
-        languageDialog1.setNegativeButton("Clear All", null);
+        languageDialog2.setNegativeButton("Clear All", null);
         //4 -> icoontje
-        languageDialog1.setIcon(R.drawable.logo);
+        languageDialog2.setIcon(R.drawable.logo);
         //maakt effectief nieuwe instantie van dialog
-        return languageDialog1.create();
+        return languageDialog2.create();
     }
 }
