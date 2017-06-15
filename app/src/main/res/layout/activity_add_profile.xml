@@ -174,11 +174,12 @@
 
         <TextView
             android:id="@+id/tv_4th_language"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
     </android.support.v7.widget.LinearLayoutCompat>
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -190,32 +191,35 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_1st_language"
-            android:text="@string/text_btn_1st_lanuage"
-            android:background="@drawable/btn_gradient"
-            android:layout_weight="1"
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_gradient"
+            android:text="@string/text_btn_1st_lanuage"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_2nd__language"
-            android:text="@string/text_btn_2nd_lanuage"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/btn_gradient"
-            android:layout_weight="1"
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_gradient"
+            android:text="@string/text_btn_2nd_lanuage"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_3rd_language"
-            android:text="@string/text_btn_3rd_lanuage"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/btn_gradient"
-            android:textColor="@color/colorAccent"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_gradient"
+            android:text="@string/text_btn_3rd_lanuage"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_4th_language"

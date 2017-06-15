@@ -10,8 +10,9 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class AddProfileActivity extends FragmentActivity implements Language1Dialog.Language1PickerDialogFragmentListener {
+public class AddProfileActivity extends FragmentActivity implements Language1Dialog.Language1PickerDialogFragmentListener, Language2Dialog.Language2PickerDialogFragmentListener {
 
     private static final int CAMERA_REQUEST = 1888;
 
@@ -36,8 +37,8 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
 
         ivPhoto.setOnClickListener(imageClickListener);
 
-        btn1stLang.setOnClickListener(languageClickListener);
-
+        btn1stLang.setOnClickListener(language1ClickListener);
+        btn2ndLang.setOnClickListener(language2ClickListener);
     }
 
     public void initViews(){
@@ -71,16 +72,32 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
         }
     };
 
-    View.OnClickListener languageClickListener = new View.OnClickListener() {
+    View.OnClickListener language1ClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             new Language1Dialog().show(getSupportFragmentManager(), "language1dialog");
         }
     };
 
+    View.OnClickListener language2ClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new Language2Dialog().show(getSupportFragmentManager(), "language2dialog");
+        }
+    };
+
     @Override
     public void language1Picked(String language1) {
         tv1stLang.setText(language1);
+    }
+
+    @Override
+    public void language2Picked(String language2) {
+        if (language2.equals(tv1stLang.getText().toString())){
+            Toast.makeText(getApplicationContext(), "You can't choose twice the same language", Toast.LENGTH_LONG).show();
+        }else{
+        tv2ndLang.setText(language2);
+        }
     }
 
 }
