@@ -12,7 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AddProfileActivity extends FragmentActivity implements Language1Dialog.Language1PickerDialogFragmentListener, Language2Dialog.Language2PickerDialogFragmentListener {
+public class AddProfileActivity extends FragmentActivity implements
+        Language1Dialog.Language1PickerDialogFragmentListener,
+        Language2Dialog.Language2PickerDialogFragmentListener,
+        Language3Dialog.Language3PickerDialogFragmentListener,
+        Language4Dialog.Language4PickerDialogFragmentListener{
 
     private static final int CAMERA_REQUEST = 1888;
 
@@ -39,6 +43,8 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
 
         btn1stLang.setOnClickListener(language1ClickListener);
         btn2ndLang.setOnClickListener(language2ClickListener);
+        btn3rdLang.setOnClickListener(language3ClickListener);
+        btn4thLang.setOnClickListener(language4ClickListener);
     }
 
     public void initViews(){
@@ -86,6 +92,21 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
         }
     };
 
+    View.OnClickListener language3ClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new Language3Dialog().show(getSupportFragmentManager(), "language3dialog");
+        }
+    };
+
+    View.OnClickListener language4ClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new Language4Dialog().show(getSupportFragmentManager(), "language4dialog");
+        }
+    };
+
+    //target dialoginterfaces
     @Override
     public void language1Picked(String language1) {
         tv1stLang.setText(language1);
@@ -104,4 +125,25 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
         }
     }
 
+    @Override
+    public void language3Picked(String language3){
+        if (language3.equals(tv1stLang.getText().toString()) || language3.equals(tv2ndLang.getText().toString())){
+            Toast.makeText(getApplicationContext(), "You can't choose twice the same language", Toast.LENGTH_LONG).show();
+        }else{
+            tv3rdLang.setText(language3);
+        }
+        if (language3.equals("None")){
+            tv4thLang.setText(language3);
+        }
+    }
+
+    @Override
+    public void language4Picked(String language4){
+        if (language4.equals(tv1stLang.getText().toString()) || language4.equals(tv2ndLang.getText().toString())
+                || language4.equals(tv3rdLang.getText().toString())){
+            Toast.makeText(getApplicationContext(), "You can't choose twice the same language", Toast.LENGTH_LONG).show();
+        }else{
+            tv4thLang.setText(language4);
+        }
+    }
 }
