@@ -93,10 +93,14 @@ public class AddProfileActivity extends FragmentActivity implements Language1Dia
 
     @Override
     public void language2Picked(String language2) {
-        if (language2.equals(tv1stLang.getText().toString())){
+        if (language2.equals(tv1stLang.getText().toString())) {
             Toast.makeText(getApplicationContext(), "You can't choose twice the same language", Toast.LENGTH_LONG).show();
         }else{
         tv2ndLang.setText(language2);
+        }
+        if (language2.equals("None")){
+            tv3rdLang.setText(language2);
+            tv4thLang.setText(language2);
         }
     }
 
