@@ -36,6 +36,7 @@
                 android:inputType="textCapWords"
                 android:maxLines="1"
                 android:textAlignment="viewStart"
+                android:layout_gravity="start"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" />
 
@@ -48,6 +49,7 @@
                 android:inputType="textCapWords"
                 android:maxLines="1"
                 android:textAlignment="viewStart"
+                android:layout_gravity="start"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" />
 
@@ -60,6 +62,7 @@
                 android:inputType="phone"
                 android:maxLines="1"
                 android:textAlignment="viewStart"
+                android:layout_gravity="start"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" />
 
@@ -72,6 +75,7 @@
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:textAlignment="viewStart"
+                android:layout_gravity="start"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" />
 
@@ -94,6 +98,7 @@
             android:inputType="number"
             android:maxLines="1"
             android:textAlignment="viewStart"
+            android:layout_gravity="start"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
 
@@ -106,6 +111,7 @@
             android:inputType="textCapWords"
             android:maxLines="1"
             android:textAlignment="viewStart"
+            android:layout_gravity="start"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
     </android.support.v7.widget.LinearLayoutCompat>
@@ -125,6 +131,7 @@
             android:inputType="number"
             android:maxLines="1"
             android:textAlignment="viewStart"
+            android:layout_gravity="start"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
 
@@ -137,6 +144,7 @@
             android:inputType="textCapWords"
             android:maxLines="1"
             android:textAlignment="viewStart"
+            android:layout_gravity="start"
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
     </android.support.v7.widget.LinearLayoutCompat>
@@ -230,6 +238,34 @@
             android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_skills"
+            android:text="@string/text_btn_skills"
+            android:background="@drawable/btn_gradient"
+            android:layout_weight="0"
+            android:textColor="@color/colorAccent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_skills"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
+
     </android.support.v7.widget.LinearLayoutCompat>
 
 </android.support.v7.widget.LinearLayoutCompat>

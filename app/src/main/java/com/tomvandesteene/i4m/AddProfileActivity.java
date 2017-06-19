@@ -16,7 +16,8 @@ public class AddProfileActivity extends FragmentActivity implements
         Language1Dialog.Language1PickerDialogFragmentListener,
         Language2Dialog.Language2PickerDialogFragmentListener,
         Language3Dialog.Language3PickerDialogFragmentListener,
-        Language4Dialog.Language4PickerDialogFragmentListener{
+        Language4Dialog.Language4PickerDialogFragmentListener,
+        SkillsDialog.SkillsPickerDialogFragmentListener{
 
     private static final int CAMERA_REQUEST = 1888;
 
@@ -26,11 +27,13 @@ public class AddProfileActivity extends FragmentActivity implements
     private AppCompatButton btn2ndLang;
     private AppCompatButton btn3rdLang;
     private AppCompatButton btn4thLang;
+    private AppCompatButton btnSkills;
 
     private TextView tv1stLang;
     private TextView tv2ndLang;
     private TextView tv3rdLang;
     private TextView tv4thLang;
+    private TextView tvSkills;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +48,23 @@ public class AddProfileActivity extends FragmentActivity implements
         btn2ndLang.setOnClickListener(language2ClickListener);
         btn3rdLang.setOnClickListener(language3ClickListener);
         btn4thLang.setOnClickListener(language4ClickListener);
+        btnSkills.setOnClickListener(skillsClickListener);
     }
 
     public void initViews(){
-
         ivPhoto = (ImageView) findViewById(R.id.iv_photo);
 
         btn1stLang = (AppCompatButton)findViewById(R.id.btn_1st_language);
         btn2ndLang = (AppCompatButton)findViewById(R.id.btn_2nd__language);
         btn3rdLang = (AppCompatButton)findViewById(R.id.btn_3rd_language);
         btn4thLang = (AppCompatButton)findViewById(R.id.btn_4th_language);
+        btnSkills = (AppCompatButton)findViewById(R.id.btn_skills);
 
         tv1stLang = (TextView)findViewById(R.id.tv_1st_language);
-        tv2ndLang = (TextView) findViewById(R.id.tv_2nd_language);
-        tv3rdLang = (TextView) findViewById(R.id.tv_3rd_language);
-        tv4thLang = (TextView) findViewById(R.id.tv_4th_language);
+        tv2ndLang = (TextView)findViewById(R.id.tv_2nd_language);
+        tv3rdLang = (TextView)findViewById(R.id.tv_3rd_language);
+        tv4thLang = (TextView)findViewById(R.id.tv_4th_language);
+        tvSkills = (TextView)findViewById(R.id.tv_skills);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -105,6 +110,20 @@ public class AddProfileActivity extends FragmentActivity implements
             new Language4Dialog().show(getSupportFragmentManager(), "language4dialog");
         }
     };
+
+    View.OnClickListener skillsClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            new SkillsDialog().show(getSupportFragmentManager(), "skillsdialog");
+        }
+    };
+
+    //target dialoginterfaces
+    @Override
+    public void skillsPicked(String skills) {
+        tvSkills.setText(skills);
+    }
+
 
     //target dialoginterfaces
     @Override
