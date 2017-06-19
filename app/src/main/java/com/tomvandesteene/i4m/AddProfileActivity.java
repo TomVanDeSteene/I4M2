@@ -1,16 +1,22 @@
 package com.tomvandesteene.i4m;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class AddProfileActivity extends FragmentActivity implements
         Language1Dialog.Language1PickerDialogFragmentListener,
@@ -28,12 +34,16 @@ public class AddProfileActivity extends FragmentActivity implements
     private AppCompatButton btn3rdLang;
     private AppCompatButton btn4thLang;
     private AppCompatButton btnSkills;
+    private AppCompatButton btnDateOfBirth;
 
     private TextView tv1stLang;
     private TextView tv2ndLang;
     private TextView tv3rdLang;
     private TextView tv4thLang;
     private TextView tvSkills;
+    private TextView tvDateOfBirth;
+
+    private DatePickerDialog.OnDateSetListener onDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +59,16 @@ public class AddProfileActivity extends FragmentActivity implements
         btn3rdLang.setOnClickListener(language3ClickListener);
         btn4thLang.setOnClickListener(language4ClickListener);
         btnSkills.setOnClickListener(skillsClickListener);
+        btnDateOfBirth.setOnClickListener(dateClickListener);
+
+        onDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                String date = dayOfMonth +"/"+ month + "/" + year;
+                tvDateOfBirth.setText(date);
+            }
+        };
     }
 
     public void initViews(){
@@ -59,12 +79,14 @@ public class AddProfileActivity extends FragmentActivity implements
         btn3rdLang = (AppCompatButton)findViewById(R.id.btn_3rd_language);
         btn4thLang = (AppCompatButton)findViewById(R.id.btn_4th_language);
         btnSkills = (AppCompatButton)findViewById(R.id.btn_skills);
+        btnDateOfBirth = (AppCompatButton)findViewById(R.id.btn_date_of_birth);
 
         tv1stLang = (TextView)findViewById(R.id.tv_1st_language);
         tv2ndLang = (TextView)findViewById(R.id.tv_2nd_language);
         tv3rdLang = (TextView)findViewById(R.id.tv_3rd_language);
         tv4thLang = (TextView)findViewById(R.id.tv_4th_language);
         tvSkills = (TextView)findViewById(R.id.tv_skills);
+        tvDateOfBirth = (TextView)findViewById(R.id.tv_date_of_birth);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -115,6 +137,24 @@ public class AddProfileActivity extends FragmentActivity implements
         @Override
         public void onClick(View v) {
             new SkillsDialog().show(getSupportFragmentManager(), "skillsdialog");
+        }
+    };
+
+    View.OnClickListener dateClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Calendar cal = Calendar.getInstance();
+
+            int year = cal.get(Calendar.YEAR);
+            int month = cal.get(Calendar.MONTH);
+            int day = cal.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog dialog = new DatePickerDialog(AddProfileActivity.this,
+                    android.R.style.Theme_Holo_Dialog,
+                    onDateSetListener,
+                    year, month, day);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.show();
         }
     };
 

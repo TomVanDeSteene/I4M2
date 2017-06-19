@@ -19,6 +19,8 @@
     <string name="text_btn_3rd_lanuage">3rd Lang</string>
     <string name="text_btn_4th_lanuage">4th Lang</string>
     <string name="text_btn_skills">Skills</string>
+    <string name="text_btn_date_of_birth">Birth Date</string>
+    <string name="text_btn_save">Save</string>
 
 
     <string name="rb_dutch">Dutch</string>
