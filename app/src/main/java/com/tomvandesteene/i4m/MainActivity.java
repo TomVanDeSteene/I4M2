@@ -9,6 +9,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     private AppCompatButton btnAddProfile;
+    private AppCompatButton btnViewList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +18,23 @@ public class MainActivity extends AppCompatActivity {
 
         btnAddProfile = (AppCompatButton)findViewById(R.id.btn_add_profile);
         btnAddProfile.setOnClickListener(addProfileListener);
+
+        btnViewList = (AppCompatButton)findViewById(R.id.btn_view_list);
+        btnViewList.setOnClickListener(viewListListener);
     }
 
     View.OnClickListener addProfileListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, AddProfileActivity.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener viewListListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
             startActivity(intent);
         }
     };

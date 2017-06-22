@@ -14,6 +14,7 @@
     <string name="title_1st_language_dialog">Choose your first language</string>
 
     <string name="text_btn_add_profile">Add Profile</string>
+    <string name="text_btn_view_list">View List</string>
     <string name="text_btn_1st_lanuage">1st Lang</string>
     <string name="text_btn_2nd_lanuage">2nd Lang</string>
     <string name="text_btn_3rd_lanuage">3rd Lang</string>
